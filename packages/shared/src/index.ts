@@ -51,6 +51,7 @@ export * from "./constants/impersonate.js";
 export * from "./constants/image-generation-defaults.js";
 export * from "./constants/security.js";
 export * from "./constants/game-assets.js";
+export * from "./constants/creature-types.js";
 
 // Utils
 export * from "./utils/macro-engine.js";
