@@ -54,6 +54,7 @@ export * from "./constants/game-assets.js";
 export * from "./constants/creature-types.js";
 export * from "./constants/creature-status.js";
 export * from "./constants/creature-weather.js";
+export * from "./constants/creature-items.js";
 
 // Utils
 export * from "./utils/macro-engine.js";
