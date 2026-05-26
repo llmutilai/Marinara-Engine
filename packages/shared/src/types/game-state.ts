@@ -2,6 +2,8 @@
 // Game State Types (RPG Companion replacement)
 // ──────────────────────────────────────────────
 
+import type { CreatureBattleEffect } from "./creature.js";
+
 /** Complete game state snapshot, linked to a message. */
 export interface GameState {
   id: string;
@@ -116,6 +118,11 @@ export interface InventoryItem {
   quantity: number;
   /** Location: "on_person" | "stored" | custom */
   location: string;
+  /** Optional typed mechanical effect for Creature Battles. When present, the
+   *  battle engine applies it deterministically. When absent, the item is
+   *  narrative-only (interpreted via the modal's free-text input — same as
+   *  the existing Encounter system's item handling). */
+  creatureBattleEffect?: CreatureBattleEffect;
 }
 
 /** Quest progress data tracked in game state. */
