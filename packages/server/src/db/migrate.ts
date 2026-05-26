@@ -478,6 +478,21 @@ const CREATE_TABLES: string[] = [
     enabled INTEGER NOT NULL DEFAULT 1 CHECK (enabled IN (0, 1)),
     updated_at TEXT NOT NULL
   )`,
+  `CREATE TABLE IF NOT EXISTS creature_species (
+    id TEXT PRIMARY KEY NOT NULL,
+    name TEXT NOT NULL,
+    description TEXT NOT NULL DEFAULT '',
+    types TEXT NOT NULL,
+    base_stats TEXT NOT NULL,
+    catch_rate INTEGER NOT NULL DEFAULT 45,
+    xp_curve TEXT NOT NULL DEFAULT 'medium',
+    learnable_moves TEXT NOT NULL DEFAULT '[]',
+    evolution TEXT,
+    sprite_path TEXT,
+    tags TEXT NOT NULL DEFAULT '[]',
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+  )`,
 ];
 
 // ── Column migrations (ALTER TABLE for schema evolution) ──
