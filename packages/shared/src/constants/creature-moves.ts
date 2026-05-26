@@ -1,7 +1,7 @@
 // ──────────────────────────────────────────────
 // Creature Battles — Move Registry
 // ──────────────────────────────────────────────
-// The 40 starter moves shipped in Phase 1.0. Coverage:
+// The 48 starter moves shipped in Phase 1.0. Coverage:
 //   - At least one offensive move per type (physical or special)
 //   - A handful of status moves (heal, buff, debuff, status inflict, weather, terrain)
 //   - Classic familiar names players will recognize

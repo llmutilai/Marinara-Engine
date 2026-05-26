@@ -96,9 +96,9 @@ export interface Move {
   /** Tie-breaker on speed; default 0. Range -7..+5. */
   priority: number;
   description: string;
-  /** Optional secondary effect: inflict a status condition. */
+  /** Optional secondary effect: inflict a status condition. `chance` is a 0..1 probability. */
   statusInflict?: { condition: Exclude<StatusCondition, null>; chance: number };
-  /** Optional secondary effect: change a stat stage. */
+  /** Optional secondary effect: change a stat stage. `chance` is a 0..1 probability. */
   statStageChange?: { target: "self" | "opponent"; stat: StatKey; delta: number; chance: number };
   /** Optional: set field weather. */
   weatherSet?: Weather;
@@ -187,7 +187,7 @@ export interface CreatureInstance {
 
 /** A single side of a battle (player or opponent). */
 export interface BattleSide {
-  ownerKind: "persona" | "character" | "wild" | "adhoc-trainer";
+  ownerKind: "persona" | "character" | "wild" | "adhoc_trainer";
   /** Null for wild creatures. */
   ownerId: string | null;
   ownerName: string;
