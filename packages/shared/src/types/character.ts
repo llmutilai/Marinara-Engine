@@ -2,6 +2,7 @@
 // Character Card V2 Types (compatible with ST / Chub)
 // ──────────────────────────────────────────────
 import type { AltDescription } from "./persona";
+import type { AiPersonality, CreatureInstance } from "./creature.js";
 
 /** Full Character Card V2 envelope. */
 export interface CharacterCardV2 {
@@ -51,6 +52,12 @@ export interface CharacterExtensions {
   rpgStats?: RPGStatsConfig;
   /** Marinara Engine: Conversation-mode availability status */
   conversationStatus?: "online" | "idle" | "dnd" | "offline";
+  /** Per-trainer creature roster for the Creature Battles feature. Optional;
+   *  undefined for characters that don't use the feature. */
+  creatureRoster?: CreatureInstance[];
+  /** AI personality used by the Creature Battles heuristic when this character
+   *  is an opponent. Defaults to "balanced" if undefined. */
+  aiPersonality?: AiPersonality;
   [key: string]: unknown;
 }
 
