@@ -2,6 +2,8 @@
 // User Persona Types
 // ──────────────────────────────────────────────
 
+import type { CreatureInstance } from "./creature.js";
+
 /** A user persona (the player's character/identity). */
 export interface Persona {
   id: string;
@@ -37,6 +39,12 @@ export interface Persona {
   tags?: string[];
   /** Saved Conversation mode activity/status text options for this persona */
   savedStatusOptions?: string[];
+  /** Per-trainer creature roster for the Creature Battles feature. Optional;
+   *  undefined for personas that don't use the feature. */
+  creatureRoster?: CreatureInstance[];
+  /** Overflow storage for creatures beyond the party-of-6. Reserved for Phase 1.5+
+   *  UI; storage is supported now so future writes don't need a migration. */
+  creatureBox?: CreatureInstance[];
   createdAt: string;
   updatedAt: string;
 }
